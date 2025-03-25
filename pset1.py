@@ -1,13 +1,25 @@
 def solution(s):
     """
     Function to count the number of vowels in a given string.
+
+    Parameters:
+    s : str : The input string consisting of lowercase characters.
+
+    Returns:
+    int : The number of vowels in the input string.
     """
     # Initialize a counter for vowels
-    vowels = "aeiou"  # Define valid vowels
-
-    # Write a for loop that iterates through each character in the string s
-    # Increase vowel_count by 1 for each vowel found
+    vowel_count = 0
+    
+    # Define valid vowels
+    vowels = "aeiou"
+    
+    # TODO: Implement your code to count the vowels in the string s
+    # Iterate through each character in s
+    # If the character is a vowel, increment vowel_count
+    
     # Return the total count of vowels
+    return vowel_count
 
 """ DON'T WRITE ANYTHING BELOW THIS LINE """
 def main():
@@ -21,10 +33,10 @@ def main():
         ('xyz', 0),
         ('', 0),
         ('a quick brown fox jumps over the lazy dog', 11),
-        ('', 0),
     ]
+    
     for i, (input_str, expected_count) in enumerate(test_cases):
-        result = solution(input_str)  # Call solution with the input string
+        result = solution(input_str)  # Call the solution function with the input string
         assert result == expected_count, f'Test case {i + 1} failed: expected {expected_count}, got {result}'
         print(f'Test case {i + 1} passed: "{input_str}" has {result} vowels.')
 
