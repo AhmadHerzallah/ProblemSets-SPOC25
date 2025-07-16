@@ -1,5 +1,5 @@
 # ================================================================
-# Credit Card Problem Set (Parts a, b, c)
+# Problem Set 2 (Parts a, b, c)
 # Students: Only edit the code in the indicated "solution_*" functions.
 # Do NOT change the function signatures. Do NOT modify any code below
 # the sentinel lines that say "DON'T WRITE ANYTHING BELOW THIS LINE".
