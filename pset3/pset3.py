@@ -1,6 +1,6 @@
 # ================================================================
 # Problem Set 3: Hangman
-# Students: Only edit the code in the indicated solution functions.
+# Students: Only edit the code in the indicated solution functions (with TODOs).
 # DO NOT change function signatures. DO NOT modify any code below the
 # sentinel lines that say "DON'T WRITE ANYTHING BELOW THIS LINE".
 # ================================================================
@@ -11,7 +11,7 @@ import random
 # ----------------------------------------------------------------
 # Problem 1: isWordGuessed
 # ----------------------------------------------------------------
-def solution_isWordGuessed(secretWord, lettersGuessed):
+def isWordGuessed(secretWord, lettersGuessed):
     """
     Return True if *every* letter of secretWord appears in lettersGuessed;
     otherwise return False.
@@ -41,7 +41,7 @@ def _test_problem1():
     ]
     print("=== Testing Problem 1: isWordGuessed ===")
     for i,(w,lg,exp) in enumerate(cases,1):
-        got = solution_isWordGuessed(w, lg)
+        got = isWordGuessed(w, lg)
         assert got == exp, f"Problem 1 Test {i} failed: expected {exp}, got {got}"
         print(f"Problem 1 Test {i} passed: secretWord='{w}', lettersGuessed={lg} -> {got}")
     print()
@@ -49,7 +49,7 @@ def _test_problem1():
 # ----------------------------------------------------------------
 # Problem 2: getGuessedWord
 # ----------------------------------------------------------------
-def solution_getGuessedWord(secretWord, lettersGuessed):
+def getGuessedWord(secretWord, lettersGuessed):
     """
     Return a string showing which letters in secretWord have been guessed.
 
@@ -85,7 +85,7 @@ def _test_problem2():
     ]
     print("=== Testing Problem 2: getGuessedWord ===")
     for i,(w,lg,exp_mask) in enumerate(cases,1):
-        got = solution_getGuessedWord(w, lg)
+        got = getGuessedWord(w, lg)
         if got is None:
             raise AssertionError(f"Problem 2 Test {i} failed: function returned None.")
         # compare normalized
@@ -101,7 +101,7 @@ def _test_problem2():
 # ----------------------------------------------------------------
 # Problem 3: getAvailableLetters
 # ----------------------------------------------------------------
-def solution_getAvailableLetters(lettersGuessed):
+def getAvailableLetters(lettersGuessed):
     """
     Return a string of lowercase letters (a-z) *not yet guessed*.
 
@@ -120,7 +120,7 @@ def _test_problem3():
     ]
     print("=== Testing Problem 3: getAvailableLetters ===")
     for i,(lg,exp) in enumerate(cases,1):
-        got = solution_getAvailableLetters(lg)
+        got = getAvailableLetters(lg)
         assert got == exp, (
             f"Problem 3 Test {i} failed:\n"
             f"  lettersGuessed={lg}\n"
@@ -133,7 +133,7 @@ def _test_problem3():
 # ----------------------------------------------------------------
 # Problem 4: hangman game (interactive)
 # ----------------------------------------------------------------
-def solution_hangman(secretWord):
+def hangman(secretWord):
     """
     Play an interactive game of Hangman with the user guessing letters.
 
@@ -153,7 +153,7 @@ def solution_hangman(secretWord):
     # Recommended variable names (as used in the spec):
     #   guessesLeft = 8
     #   lettersGuessed = []
-    # Use solution_isWordGuessed / solution_getGuessedWord / solution_getAvailableLetters
+    # Use isWordGuessed / getGuessedWord / getAvailableLetters
     # for consistency with student-implemented helpers.
     #
     # Remember: do NOT print the result of calling this function (it returns None).
@@ -208,7 +208,7 @@ def play_hangman_demo():
     """
     wordlist = loadWords()
     secretWord = chooseWord(wordlist)
-    solution_hangman(secretWord)
+    hangman(secretWord)
 
 # ----------------------------------------------------------------
 # Master test runner (Problems 1–3 only; no interactive I/O)
