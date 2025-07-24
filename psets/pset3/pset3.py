@@ -35,7 +35,8 @@ def _test_problem1():
     cases = [
         ('apple', ['e','i','k','p','r','s'], False),
         ('apple', ['a','p','l','e'], True),
-        ('else',  ['e','l','s'], False),
+        ('else',  ['e','l','s'], True),
+        ('else',  ['e','l'], False),
         ('else',  ['e','l','s','x','y','z','e'], True),
         ('',      [], True),  # empty secret trivially guessed
     ]
@@ -162,9 +163,6 @@ def hangman(secretWord):
     print("Welcome to the game Hangman!")
     print(f"I am thinking of a word that is {len(secretWord)} letters long.")
     print("-------------")
-    # Minimal loop stub so file runs without blocking tests:
-    # (Remove once you implement full interaction.)
-    # NOTE: We *do not* call input() here in the scaffold to avoid blocking tests.
     print("(hangman game not yet implemented)")
     return
 
